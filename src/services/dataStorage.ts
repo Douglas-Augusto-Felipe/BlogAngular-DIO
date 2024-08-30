@@ -1,4 +1,4 @@
-import { Measurement } from '../interface';
+import { Measurement } from '../interfaces/Interface';
 
 // ... (Implementação para armazenar os dados, ex: MongoDB, PostgreSQL)
 
