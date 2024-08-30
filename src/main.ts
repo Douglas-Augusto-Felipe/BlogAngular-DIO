@@ -1,6 +1,14 @@
-import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import express from 'express';
+import uploadRouter from './routes/upload';
+import cors from 'cors';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+const app = express();
+const port = 3000;
+
+app.use(cors());
+app.use(express.json());
+app.use('/upload', uploadRouter);
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
+});
